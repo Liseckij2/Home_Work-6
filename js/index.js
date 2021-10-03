@@ -16,7 +16,7 @@ const studentsMock = (() => {
 })();
 
 let student = studentsMock.getStudent();
-let list = studentsMock.getStudentList(11);
+let list = studentsMock.getStudentList(10);
 
 function foo(list) {
     var sum = 0;
@@ -62,8 +62,8 @@ addNedian(list);
 
 list.push(studentsMock.getStudent());
 
-function sortByAge(list) {
+function sortByStatus(list) {
  list.sort((a, b) => a.midOcenka < b.midOcenka ? 1 : -1);
  return console.table(list);
   }
-  sortByAge(list);
+  sortByStatus(list);
