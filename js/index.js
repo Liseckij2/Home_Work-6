@@ -1,6 +1,6 @@
 const studentsMock = (() => {
     const generateMarksArray = (qtt, min, max) => new Array(qtt).fill(min).map(() => faker.datatype.number({ min, max }));
-
+    
     const getStudent = () => ({
         name: faker.name.findName(),
         specialty: faker.name.jobTitle(),
@@ -17,6 +17,8 @@ const studentsMock = (() => {
 
 let student = studentsMock.getStudent();
 let list = studentsMock.getStudentList(10);
+
+list.push(studentsMock.getStudent());
 
 function foo(list) {
     var sum = 0;
@@ -52,7 +54,7 @@ list.forEach(student => {
         return student;
       };
     median(student.marks);
-    student.marks.forEach(marks => {
+    student.marks.forEach(elemment => {
         student["MEDIANA"] = result;
     });
     return student;
@@ -60,7 +62,6 @@ list.forEach(student => {
 }
 addNedian(list);
 
-list.push(studentsMock.getStudent());
 
 function sortByStatus(list) {
  list.sort((a, b) => a.midOcenka < b.midOcenka ? 1 : -1);
